@@ -10,7 +10,7 @@ const store = async (req,res) =>{
 
     const { filename } = req.file;
 
-    console.log(req.file);
+    // console.log(req.file);
 
     const usuario = await User.findById(user_id);
     if(!usuario) return res.status(400).json({error:'Usuáro não existe!!!'})
@@ -28,9 +28,6 @@ const store = async (req,res) =>{
 
 const index = async (req,res) =>{
     const { tech } = req.query
-
-    console.log(tech);
-    
     const spots = await Spots.find({ techs: tech})
 
     return res.json(spots)

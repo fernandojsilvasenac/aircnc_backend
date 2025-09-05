@@ -13,6 +13,8 @@ const store = async (req,res) =>{
 
     await booking.populate(['spot', 'user'])
 
+    
+
     return res.json(booking)
 }
 
